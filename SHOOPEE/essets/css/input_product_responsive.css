@@ -1,0 +1,120 @@
+/* Mobile Va Tablet */
+@media (max-width:1024px){
+    .container__demo{
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    .container__demo{
+        top:0;
+        padding-top: 30%;
+    }
+    
+    .container__demo-login-margin{
+        flex-direction: column;
+    }
+    .container__demo-login-list{
+        flex-direction: column;
+    }
+    .container__demo-login-list-item{
+        padding-right: 0;
+        width: 100%;
+        padding: 10px;
+    }
+    .container__demo-login-margin{
+        margin: 0;
+        width: 100%;
+    }
+    .container__dome-text{
+        text-align: center;
+    }
+    .container__demo-login-aside {
+        padding: 20px 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .container__demo-login-submit {
+        margin: 0 20px;
+        background-color: #1BA8FF;
+    } 
+    .modal__body{
+        width: 100%;
+        right: 0;
+    }
+    
+    
+
+}
+
+/* tablet */
+@media (min-width:740px) and (max-width:1023px){
+    .header__navbar-list:last-child{
+        margin-top: 4px;
+    }
+    /* Phần container */
+    .container__demo-login-list-item{      
+        padding: 10px 20px;
+    }
+   
+  
+    
+}
+
+/* Mobile */
+@media (max-width:739px){
+   .header__navbar-list:first-child {
+    margin-left: 5px;
+   }
+   .header__navbar-list-item-badge{
+       margin: 0 0 3px;
+   }
+   .header__navbar-list:last-child {
+    margin-right: 5px;
+   }
+    .header__navbar-list-item-icon{
+        margin-left: 15px;
+    }
+    /* Phần thân */
+    .container__demo-title{
+        font-size: 2rem;
+    }
+    .container__demo-button-link{
+        width: 80%;
+    }
+    .container__demo-login{
+        bottom: 25%;
+    }
+    .container__demo-login-list{
+        padding: 0 34px;
+    }
+    .container__demo-login-aside {
+        padding: 20px 34px;
+    }
+    .container__demo-login-submit{
+        margin: 0 34px;
+    }
+
+    .modal__body-form-footer{
+        flex-direction: column;
+    }
+    .modal__body-controls{
+        display: flex;
+        justify-content: space-between;
+
+    } 
+    .button_class_2{
+        padding: 0 5px;
+    }
+    /* Footer */
+    .fooder__text img{
+        display: none;
+    }
+   
+}
+
+@media (max-width:380px){
+    .container__demo-login-aside {
+        padding: 10px 34px;
+    }
+    .container__demo-login {
+        bottom: 10%;
+    }
+}

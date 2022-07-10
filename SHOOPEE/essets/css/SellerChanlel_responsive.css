@@ -1,0 +1,63 @@
+/* Mobile Va Tablet */
+@media (max-width:1023px){
+    .container__form{
+        margin: 0;
+    }
+    .container__text{
+        text-align: center;
+    }
+    
+
+}
+
+/* tablet */
+@media (min-width:740px) and (max-width:1023px){
+    .header__navbar-list:last-child{
+        margin-top: 4px;
+    }
+    /* Phần container */
+    .height-Table{
+        height: 100px;
+    }
+    .container__padding {
+        padding: 20px 0 70px 0;
+    }
+    
+}
+
+/* Mobile */
+@media (max-width:739px){
+   .header__navbar-list:first-child {
+    margin-left: 5px;
+   }
+   .header__navbar-list-item-badge{
+       margin: 0 0 3px;
+   }
+   .header__navbar-list:last-child {
+    margin-right: 5px;
+   }
+    .header__navbar-list-item-icon{
+        margin-left: 15px;
+    }
+    /* Phần thân */
+    .container__text{
+        padding-left: unset;
+    }
+    .container__text-title{
+        font-size: 2.5rem;
+    }
+    .container__text-subtitle{
+        font-size: 1.2rem;
+    }
+    .container__image{
+        margin-left:unset;
+    }
+    .container__padding {
+        padding: 20px 0 20px 0;
+    }
+    /* Footer */
+    .fooder__text img{
+        display: none;
+    }
+   
+}

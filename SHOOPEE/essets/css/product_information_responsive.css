@@ -1,0 +1,294 @@
+/* Mobile Va Tablet */
+@media (max-width:1023px){
+    .hide-on-mobile-tablet{
+        display: none;
+    }
+    .show-on-mobile-tablet{
+        display: none;
+    }
+    /* ______________ */
+    .header__nav-btn{
+        display: block;
+    }
+
+    
+    .header-with-search{
+        padding-bottom: 0px;
+    }
+    .header__cart-infonation{
+        position: fixed;
+        top: var(--header-height);
+        right: 0;
+        width: 100%;
+        padding: 0 calc((100% - 644px) / 2);
+    }
+    .header__cart-infonation::before{
+        display: none;
+    }
+    .header__sort-bar{
+        display: flex;
+    }
+    .container{
+        margin-top: calc(var(--header-height) + var(--header-sort-bar-height) );
+    }
+    /* filter */
+    .container__filter-border{
+        border: 1px solid rgba(0,0,0,0.2);
+        margin-top: 5px;
+    }
+    .container__filter-item{
+        border-right: 0;
+       
+    }
+     /* Phần thong tin sản phẩm  */
+     
+    .container__control-bar{
+        position: unset;
+    }
+    .container__item-name{
+        width: 100%;
+        text-align: center;
+    }
+    .container__item{
+        flex-direction: column;
+    }
+    .container__price-old-text{
+        font-size: 1.3rem;
+    }
+    .container__buy-cash-text{
+        font-size: 1.4rem;
+    }
+    .container__buy-installment-text{
+        font-size: 1.3rem;
+    }
+    .container__price-old-cash{
+        font-size: 2rem;
+    }
+    .container__sale-of-text{
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    .container__information-product{
+        flex-direction: column;
+    }
+    .container__information-product-info-table{
+        width: 100%;
+        margin-top: 20px;
+
+    }
+    tr{
+        text-align: center;
+    }
+    
+    
+    
+    
+    
+    
+
+
+
+}
+
+/* tablet */
+@media (min-width:740px) and (max-width:1023px){
+    .hide-on-tablet{
+        display: none;
+    }
+    .header__cart {
+        width: 80px;
+        text-align: right;
+
+    }
+    :root{
+        --header-height:68px;
+        --navbar-height:0px;
+    }
+    .container__img-full{
+        height: 270px;
+    }
+    .container__list-iphone-item,
+    .container__list-iphone-item-img{
+        height: 45px;
+        width: 40px;
+    }
+    .container__list-iphone-item-active::after{
+        top: -54px;
+        right: 25px;
+    }
+    
+
+    
+}
+
+/* Mobile */
+@media (max-width:739px){
+    .hide-on-mobile{
+        display: none;
+    }
+    :root{
+        --header-height:54px;
+        --navbar-height:0px;
+    }
+    .header-with-search{
+        justify-content: space-between;
+    }
+    .header__logo{
+        width: unset;
+    }
+    .header__logo-img {
+        width: 120px;
+    }
+    .header__cart{
+        width: unset;
+        padding: 0 20px 0 0;
+    }
+    .header__cart-icon-notice{
+        right: 12px;
+        line-height: 1.2rem;
+        padding: 2px 3px;
+    }
+
+    /* icon để nhấn trên mobile */
+    .header__mobile-sreach{
+        display: block;
+    }
+
+    .header__search{
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: calc(var(--header-height) + 3px);
+        z-index: 20;
+        height: 44px;
+         border: .5px solid gray;
+        box-shadow: 0 5px 2px rgba(0,0,0,0.05);
+        margin: 1px 5px 0px ;
+        padding: 0 16px;
+        animation: mobileSearchSideIn linear .1s;
+        display: none;
+    }
+    @keyframes mobileSearchSideIn {
+        from{
+            top: calc((var(--header-height) + 3px) / 2);
+            opacity: 0;
+        }
+        to{
+            top:  calc((var(--header-height) + 3px));
+            opacity: 1;
+        }
+    }
+    .header__search-select{
+        display: none;
+    }
+    
+    .header__search-history{
+        top: calc( 100% + 7px );
+        width: 100%;
+    }
+
+    .home_pagination {
+        margin: 23px 0 20px;
+    }
+    .home_pagination-item-button {
+        min-width: 33px;
+        height: 30px;
+        border: 0;
+        font-size: 1.6rem;
+    }
+     .home_pagination-item-button-still{
+        width: 37px;
+        height: 30px;
+        font-size: 1.4rem;
+     }
+     .home_pagination-item-icon {
+        font-size: 1.3rem;
+    }
+
+    .home_pagination-item {
+        padding: 0 ;
+    }
+    .app-content{
+        margin: 0 4px;
+    }
+    /* phần item sản phẩm */
+    .home__product-item-name{
+        height: 57px;
+    }
+    .home__product-item-sold {
+        font-size: 1rem;
+    }
+    .home__product-item-rating {
+        margin-left: 0;
+    }
+    .home__product-item-like{
+        display: none;
+    }
+
+    .home__product-item-origin {      
+        padding: 0 11px 0;
+        font-size: 1rem;
+    }
+    .home__product-item-price-old{
+        overflow: hidden;
+    }
+    .header__cart-footer-text{
+        display: none;
+    }
+    
+    /* footer */
+    .center-mobile{
+        text-align: center;
+        padding: 0 5px;
+    }
+    .fooder__download-qr{
+        margin: auto;
+    }
+    .fooder__download-app{
+        margin: auto;
+    }
+    /* Phần form đăng kí */
+    .modal__body-fooder{
+        padding: 0 2px 2px 2px;
+    }
+    .header__nav-btn{
+        margin: unset;
+        padding-left: 20px;
+    }
+
+     /* Phần form đăng kí */
+     .modal__body-fooder{
+        padding: 0 2px 2px 2px;
+    }
+    .header__nav-btn{
+        margin: unset;
+        padding-left: 20px;
+    }
+    .container__product-order-on-mobile-1{
+          order: 1;
+    }
+    .container__product-order-on-mobile-2{
+          order: 2;
+    }
+    .container__product-order-on-mobile-3{
+        order:3;
+        padding-top: 20px;
+    }
+    .container__control-bar{
+        padding-left: 5px;
+    }
+    .container__img-full{
+        width: 100%;
+    }
+    .container__list-iphone{
+       padding: 0 6px;
+    }
+    .container__list-iphone-item{
+        margin: auto;
+       
+    }
+    .container__list-iphone-item-active::after {
+        top: -65px;
+        right: 36px;
+    }
+}
