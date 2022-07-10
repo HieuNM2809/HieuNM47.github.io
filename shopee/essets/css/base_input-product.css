@@ -1,0 +1,66 @@
+:root{
+    --white-color: #fff;
+    --black-color: black;
+    --text-color: #333;
+    --red-color:red;
+    --primary-color:#EE4d2D;
+    --border-color:#dbdbdb;
+
+    --header-height:120px;
+    --navbar-height:47px;
+    --header-with-search-height: calc(var(--header-height) - var( --navbar-height));
+
+}
+::placeholder {
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+
+ul{
+    list-style: none;
+}
+*{
+    box-sizing: inherit;
+}
+a{
+    text-decoration: none;
+}
+html{
+    font-size: 65.5%;
+    line-height: 1.6rem;
+    /* sans-serif : ko có gạch chân */
+    font-family: 'Roboto',sans-serif ;
+    box-sizing: border-box;
+}
+
+
+
+/* Animation */
+/* QR */
+@keyframes Hien_dan{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity:1;
+    }
+}
+/* Thông báo */
+@keyframes header__thongbao-growth{
+    from{
+     transform:scale(0);
+     opacity: 0;
+    }
+    to{
+      transform:scale(1);
+      opacity: 1;
+    }
+}
+@keyframes growth{
+    from{
+     transform:scale(var(--growth-from));
+    }
+    to{
+      transform:scale(var(--growth-to));
+    }
+}

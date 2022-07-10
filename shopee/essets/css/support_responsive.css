@@ -1,0 +1,19 @@
+/* Mobile Va Tablet */
+@media (max-width:1023px){
+   
+
+
+}
+
+/* tablet */
+@media (min-width:740px) and (max-width:1023px){
+    
+    
+}
+
+/* Mobile */
+@media (max-width:739px){
+    .container_img-search input{
+        width: 270px;
+    }
+}

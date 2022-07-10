@@ -1,0 +1,367 @@
+:root{
+    --white-color: #fff;
+    --black-color: black;
+    --text-color: #333;
+    --red-color:red;
+    --primary-color:#EE4d2D;
+    --border-color:#dbdbdb;
+
+    --header-height:120px;
+    --navbar-height:47px;
+    --header-with-search-height: calc(var(--header-height) - var( --navbar-height));
+    --header-sort-bar-height:46px;
+
+}
+ul{
+    list-style: none;
+}
+*{
+    box-sizing: inherit;
+}
+a{
+    text-decoration: none;
+}
+html{
+    font-size: 65.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto',sans-serif ;
+    box-sizing: border-box;
+}
+.grid{
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.grid__full-width{
+    width: 100%;
+}
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+/* Màn hình chia ra 12 cột */
+.grid__column-2{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.667%;
+}
+.grid__column-10{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.333%;
+}
+/* chia ra hai cột của home */
+/*Home : grid__column-10 */
+.grid__column-2-home{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+    display: block;
+}
+.grid__column-4{
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 35px;
+    width: 33.33%;
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+/* Animation */
+/* QR */
+@keyframes Hien_dan{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity:1;
+    }
+}
+/* Thông báo */
+@keyframes header__thongbao-growth{
+    from{
+     transform:scale(0);
+     opacity: 0;
+    }
+    to{
+      transform:scale(1);
+      opacity: 1;
+    }
+}
+@keyframes growth{
+    from{
+     transform:scale(var(--growth-from));
+    }
+    to{
+      transform:scale(var(--growth-to));
+    }
+}
+
+
+
+
+/* Modal form đăng kí */
+ /* Modal Register form đăng kí  : css in base.css  */
+ .modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+   bottom: 0;
+   display: flex;
+   animation: Hien_dan linear 0.2s;
+   z-index: 1000;
+   /* display: none; */
+}
+.modal__overlay{
+ 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modal__body{
+z-index: 1;
+width: 570px;
+--growth-from: 0.7;
+--growth-to:1;
+animation: growth linear 0.2s;
+/* height: 590px; */
+/* background-color:var(--white-color); */
+margin:auto;
+/* border-radius: 5px; */
+}
+.modal__body-form{
+background-color:var(--white-color);
+border-radius: 5px;
+  /* các đối tượng vượt quá thì ẩn */
+overflow:hidden;
+
+}
+.modal__body-group{
+    padding: 30px 30px 0 30px;
+}
+.modal__body-form-header{
+display: flex;
+justify-content: space-between;
+margin-bottom: 30px;
+}
+.modal__body-form-header-text{
+font-size: 2rem;
+font-weight: 400;
+margin: 0 11px;
+}
+.modal__body-form-header-switch{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: red;
+    margin: 0  11px;
+    cursor: pointer;
+}
+.modal__body-form-form{
+    margin-bottom: 20px;
+}
+.modal__body-form-form-group{
+    margin-bottom: 10px     ;
+}
+.modal__body-form-input{
+width: 100%; 
+height: 45px;
+border-radius: 2px;
+border: 1px solid var(--border-color);
+font-size: 1.3rem;
+padding: 0 20px;
+outline:none;
+}
+.modal__body-form-input:focus{
+border-color: gold;
+}
+
+.modal__body-form-aside{
+    padding: 0 20px ;
+}
+.modal__body-form-text{
+font-weight: 500;
+text-align: center;
+line-height: 1.5rem;
+}
+.model__boby-form-text-link{
+color: var(--primary-color);
+}
+.modal__body-controls{
+margin: 30px 0px;
+display: flex;
+padding-left: 0px;
+display: flex;
+justify-content:flex-end;
+
+}
+.nut_nhan{
+    height: 36px;
+    min-width: 142px; 
+    border-radius: 3px;
+    font-size: 1.4rem;
+    border: none;
+    text-decoration: none;
+    padding: 0px;
+    outline: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+.nut_nhan.button__class_1{
+    color: var(--black-color); 
+ }
+
+ .button__class_1:hover{
+    background-color: beige;
+    z-index: 1;
+ }
+.nut_nhan.button__class_2{
+color: var(--white-color);
+background-color: var(--primary-color);
+margin-left: 8px;
+}
+
+.modal__body-fooder{
+display: flex;
+background-color: #f5f5f5;
+padding: 12px 36px;
+justify-content: space-between;
+}
+
+.btn--with-icon{
+padding:2px 40px 0 10px;
+}
+.btn--with-icon-private-1{
+background-color: blueviolet;
+color: var(--white-color);
+font-weight: 300;
+}
+.btn--with-icon-private-2{
+    background-color: var(--white-color);
+    color: #a7a7a7;
+}
+.padding_nut-nhan{
+    margin-right: 30px;
+}
+
+
+/* Modal login form đăng nhập  : */
+
+.modal__body-form-help{
+font-size: 18px;
+display:flex;
+justify-content: flex-end;
+
+}
+
+.modal__body-form-help-link{
+color: red;
+}
+
+.modal__body-form-help-link{
+color: #989898;
+}
+.modal__body-form-help-separate{
+display: block;
+border-left: 1px solid var(--border-color);
+height: 22px;
+margin: 4px 16px 0 16px ;
+}
+.modal__body-form-help-forgot{
+    color: var(--primary-color);
+}
+
+
+ /* Phần thông báo sau khi đăng ký */
+
+ .modal__body-after-registration{
+    z-index: 1;
+    width: 300px;
+    --growth-from: 0.7;
+    --growth-to:1;
+    animation: growth linear 0.2s;
+    margin:auto;
+    position: relative;
+    }
+.modal__body-form-after-registration{
+    background-color:var(--white-color);
+    overflow:hidden;
+    padding: 20px;
+    border-top-right-radius: 13px;
+    border-bottom-left-radius: 13px;
+}
+.modal__close{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border: 0;
+   outline: none;
+   cursor: pointer;
+   padding: 0px;
+   border-top-right-radius: 13px;
+   background-color: var(--white-color);
+}
+.modal__icon-close{
+  
+    color: var(--red-color);
+    font-size: 2rem;
+}
+.modal__icon{
+    font-size: 4rem;
+    color: orangered;
+    margin: 0 auto;
+}
+.nodal__congratulations{
+   font-size: 1.4rem;
+   color: var(--text-color);
+   padding: 15px 20px 20px 20px;
+   text-align: center;
+}
+.btn-input-now{
+   color: var(--white-color);
+   font-weight: 400;
+   text-align: center;
+    height: 40px;
+}
+.btn-input-now-button{
+   height: 100%;
+   width: 100%;
+   background-color:orangered ;
+   color: var(--white-color);
+   border: 0;
+   outline: none;
+   cursor: pointer;
+}
+
+.btn-input-now-button:hover{
+    background-color:rgb(255, 69, 0, 0.7) ;
+}
+
+
+
+/* Transition */
+/* .category__list-item-link{
+    right: 0;
+    color: var(--text-color);
+    padding: 10px 12px;
+    display: block ;
+    transition:right linear 0.1s;
+    position: relative;
+}
+.category__list-item-link:hover{
+    color: var(--primary-color);
+    right: -4px;
+    font-weight: bold;
+} */
