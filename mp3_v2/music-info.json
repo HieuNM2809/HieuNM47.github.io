@@ -2,6 +2,15 @@
     "songs": [
         {
             "bg": "#c9bea28f",
+            "artist": "Hiếu Minh",
+            "songName": "Nhạc Chill",
+            "files": {
+                "song": "https://assets-file.000webhostapp.com/nhacChill.mp3",
+                "cover": "https://bloganchoi.com/wp-content/uploads/2021/12/chill-la-gi-nghe-nhac-chill-4.jpg"
+            }
+        },
+        {
+            "bg": "#c9bea28f",
             "artist": "Sơn Tùng MTP",
             "songName": "Cơn mưa ngang qua",
             "files": {
