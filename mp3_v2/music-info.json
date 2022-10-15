@@ -1,0 +1,85 @@
+{
+    "songs": [
+        {
+            "bg": "#c9bea28f",
+            "artist": "Sơn Tùng MTP",
+            "songName": "Cơn mưa ngang qua",
+            "files": {
+                "song": "https://hieunm47.github.io/conMuaNgangQua.mp3",
+                "cover": "https://raw.githubusercontent.com/abxlfazl/music-player-widget/main/src/assets/media/songs/1/img.jpg"
+            }
+        },
+        {
+            "bg": "#c9bea28f",
+            "artist": "sickick",
+            "songName": "talking to the moon (bruno mars remix)",
+            "files": {
+                "song": "https://raw.githubusercontent.com/abxlfazl/music-player-widget/main/src/assets/media/songs/1/song.mp3",
+                "cover": "https://raw.githubusercontent.com/abxlfazl/music-player-widget/main/src/assets/media/songs/1/img.jpg"
+            }
+        },
+        {
+            "bg": "#0896eba1",
+            "artist": "bless you",
+            "songName": "driving",
+            "files": {
+                "song": "https://raw.githubusercontent.com/abxlfazl/music-player-widget/main/src/assets/media/songs/2/song.mp3",
+                "cover": "https://raw.githubusercontent.com/abxlfazl/music-player-widget/main/src/assets/media/songs/2/img.jpg"
+            }
+        },
+        {
+            "bg": "#ebbe03",
+            "artist": "lil uzi vert",
+            "songName": "demon high",
+            "files": {
+                "song": "https://raw.githubusercontent.com/abxlfazl/music-player-widget/main/src/assets/media/songs/3/song.mp3",
+                "cover": "https://raw.githubusercontent.com/abxlfazl/music-player-widget/main/src/assets/media/songs/3/img.jpg"
+            }
+        },
+        {
+            "bg": "#ffc382",
+            "artist": "travis scott",
+            "songName": "a man",
+            "files": {
+                "song": "https://raw.githubusercontent.com/abxlfazl/music-player-widget/main/src/assets/media/songs/4/song.mp3",
+                "cover": "https://raw.githubusercontent.com/abxlfazl/music-player-widget/main/src/assets/media/songs/4/img.jpg"
+            }
+        },
+        {
+            "bg": "#ffcbdc",
+            "artist": "randall",
+            "songName": "waharan",
+            "files": {
+                "song": "https://raw.githubusercontent.com/abxlfazl/music-player-widget/main/src/assets/media/songs/5/song.mp3",
+                "cover": "https://raw.githubusercontent.com/abxlfazl/music-player-widget/main/src/assets/media/songs/5/img.jpg"
+            }
+        },
+        {
+            "bg": "#44c16fb5",
+            "artist": "tritonal",
+            "songName": "diamonds (feat. rose darling)",
+            "files": {
+                "song": "https://raw.githubusercontent.com/abxlfazl/music-player-widget/main/src/assets/media/songs/6/song.mp3",
+                "cover": "https://raw.githubusercontent.com/abxlfazl/music-player-widget/main/src/assets/media/songs/6/img.jpg"
+            }
+        },
+        {
+            "bg": "#ff4545",
+            "artist": "the weeknd",
+            "songName": "blinding lights",
+            "files": {
+                "song": "https://raw.githubusercontent.com/abxlfazl/music-player-widget/main/src/assets/media/songs/7/song.mp3",
+                "cover": "https://raw.githubusercontent.com/abxlfazl/music-player-widget/main/src/assets/media/songs/7/img.jpg"
+            }
+        },
+        {
+            "bg": "#e5e7e9",
+            "artist": "arizona zervas",
+            "songName": "no i in team",
+            "files": {
+                "song": "https://raw.githubusercontent.com/abxlfazl/music-player-widget/main/src/assets/media/songs/8/song.mp3",
+                "cover": "https://raw.githubusercontent.com/abxlfazl/music-player-widget/main/src/assets/media/songs/8/img.jpg"
+            }
+        }
+    ]
+}
