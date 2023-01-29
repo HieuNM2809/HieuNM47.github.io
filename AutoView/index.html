@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIẾM VIEW (NMH)</title>
+    <link rel="short icon" href="./essets/images/view-24.ico">
+      <!-- Reset -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+      <!-- font chữ -->
+      <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap&subset=vietnamese"
+          rel="stylesheet">
+      <!-- hình  -->
+      <link rel="stylesheet" href="./essets/fonts/fontawesome-free-5.13.0-web/css/all.min.css">
+      <!-- boostrap -->
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> 
+      <!-- File để Trình duyệt IE thực hiện Responsive ( Nhận biết dc kích thước màn hình  cho dưới IE9) -->
+      <!-- Để coment lại đoạn  .js đó, khi sài Trình duyệt thường -->
+  
+      <!--[if lte IE 6]>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+      <![endif]-->
+  
+      <!-- Link jquery -->
+      <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+      <link rel="short icon" href="#">
+      <title>Tiki</title>
+      <style>
+          @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Piedra&display=swap');
+      </style>
+    <link rel="stylesheet" href="./essets/css/main.css">
+    <link rel="stylesheet" href="./essets/css/Grid_air.css">
+    <script src="./essets/js/main.js"></script>
+</head>
+<body>
+    <!-- Phần ở đầu -->
+    <div id="Main_Star" class="container__full container-sm">
+        <div class="container__ready">
+            <div class="container__ready-text">
+                <div id="star" class="container__ready-text-title">Increase View!</div>
+                <span >Cùng trải nghiệm, increase view</span>
+            </div>
+        </div>
+        <div class="container__icon">
+            <img class="container__icon-traidat" src="./essets/images/traidat.png" alt="Trai đất">
+            <img class="container__icon-rocket" src="./essets/images/rocket.png" alt="Trai đất">
+            <img class="container__icon-men" src="./essets/images/men.png" alt="Trai đất">
+        </div>
+    </div>
+
+    <!-- Phần cày view -->
+    <div class="container-fluid">
+        <div id="Main_form" style="display: none;">
+            <div class="form-group">
+                <label for="usr" style="text-align: center; font-size: 2rem;">Link Video:</label>
+                <input type="text"  class="form-control" placeholder="Link Video " id="Video1" style="font-size: 1.5rem;">
+            </div>
+            <div class="form-group">
+                <label for="usr" style="text-align: center; font-size: 2rem;">Thời gian kết thúc Video:</label>
+                <input type="text"  class="form-control" placeholder="Số Giây kết thúc Video" id="txtEnd" style="font-size: 1.5rem;">
+            </div>
+    
+            <div class="row" style="display: flex;justify-content: space-between; padding: 0 15px;">
+               <div class="button_group">
+                    <!-- Lưu thay đổi  -->
+                    <button id="start" class="btn btn-primary"   onclick="LuuThayDoi(); Batdau();" style="font-size: 1.5rem;">Lưu thay đổi và Bắt đầu</button>
+            
+                    <!-- Đóng  clear -->
+                    <button id="close" class="btn btn-danger" onclick="Stop(); KetThuc();" style="font-size: 1.5rem;">Stop Cày View</button>
+               </div>
+                <span>Số view đã cày được:<span id="SoViewCayDc">0</span></span>
+            </div>
+            <!-- Xuất giá trị time cho ng xem -->
+            <div id="XuatTime" class="OutTime">00</div>
+        </div>
+    </div>
+     
+    
+</body>
+</html>

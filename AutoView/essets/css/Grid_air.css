@@ -1,0 +1,99 @@
+/* Mobile Va Tablet */
+@media (max-width:1024px){
+   
+      
+
+}
+
+/* tablet */
+@media (min-width:740px) and (max-width:1025px){
+    .container__full {
+        height: 47vh;
+    }
+    .container__icon{
+        top: -550px;
+    }
+    
+}
+
+/* Mobile */
+@media (max-width:739px){
+    .container__full {
+        height: 78vh;
+        background-position: right;
+    }
+    .container__icon-men, .container__icon-rocket{
+        bottom: -600px;
+    }
+    #start{
+        margin-bottom: 15px;
+    }
+   
+}
+/* ẩn hiện*/
+/* Trên Mobile và tablet */
+@media (max-width:1023px){
+    .hide-on-mobile-tablet{
+        display: none;
+    }
+    .show-on-mobile-tablet{
+        display: block;
+    }
+}
+/* Trên tablet */
+@media (min-width:740px) and (max-width:1023px){
+    .hide-on-tablet{
+        display: none;
+    }
+    .show-on-tablet{
+        display: block;
+    }   
+}
+/* Trên Mobile  */
+@media (max-width:767px){
+    .hide-on-mobile{
+        display: none;
+    }
+    .show-on-mobile{
+        display: block;
+    }
+    .container__main-group-controll-flights{
+        display: flex;
+        justify-content: space-between;
+    }
+    .container__main-group-controll{
+        flex-direction: column;
+    }
+    .container__main-group-controll-roundtrip{
+        justify-content: space-evenly;
+        margin-top: 20px;
+    }
+    .container__main-time{
+        flex-direction: column;
+    }
+    .container__main-time-ngaydi,.container__main-time-ngayve{
+        border: unset;
+        width: 100%;
+    }
+    .container__main-time-ngaydi-lich{
+        width: 100%;
+    }
+    .container__main-time-ngaydi-input{
+        width: 100%;
+    }
+    .container__main-time-ngaydi-text,.container__main-time-ngayve-text{
+        font-size: 1.8rem;
+        color: var(--white-color);
+    }
+    .container__main-time-ngaydi-lich i{
+        left: -60px;
+    }
+    .container__main-colItemSelect-Adults,.container__main-colItemSelect-children,.container__main-colItemSelect-baby{
+        flex-direction: column;
+    }
+    .btn{
+        width: 100%;
+    }
+}
+
+

@@ -1,0 +1,147 @@
+/* Phần ready */
+.container__full {
+    width: 100vw;
+    height: 80vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/VuTru1.png);
+    cursor: url(../images/cursor.png), auto !important; 
+ }
+ 
+ .container__ready {
+  display: flex;
+   width: 100%;
+   height:100%;
+ }
+ 
+ .container__ready-text {
+     margin: auto;
+     cursor: pointer;
+ }
+ 
+ .container__ready-text-title {
+    color: #f0e570;
+    font-size: 4rem;
+    font-family:Tahoma,Sans-Serif;
+    text-shadow: 8px 8px 3px #f0e57023;
+    font-family: 'Piedra', cursive;
+    line-height: 3rem;
+ }
+ .container__ready-text-title:hover{
+     color: #f0e5705b;
+     cursor: url(../images/cursor_ThiaXien3.png), auto !important;
+     text-shadow: 0px 0px 5px #f0e57060;
+ }
+ .container__ready-text >span{
+     font-size: 2rem;
+     /* margin-left: -20px; */
+     cursor: url(../images/cursor.png), auto !important;
+     font-family: 'Caveat', cursive;
+     color: #f0e570;
+ }
+ 
+ .container__icon {
+  position: relative;
+  top: -80vh;
+ }
+ 
+ .container__icon-traidat {
+     height: 100px;
+     position: absolute;
+     top: 40px;
+     left: 20%;
+     animation: cricle 10s infinite;
+ }
+ 
+ .container__icon-rocket {
+     position: absolute;
+     bottom: -440px;
+     left: 10%;
+     animation: leaner 100s infinite;
+ }
+ 
+ .container__icon-men {
+   height: 120px;
+   position: absolute;
+   bottom: -420px;
+   right: 10%;
+   transform: rotate(150deg);
+   animation: messy 150s infinite;
+ 
+ }
+/* Phần tăng view */
+.OutTime{
+    text-align: center;
+    margin-top: 100px;
+    font-size: 8rem;
+    font-weight: 900;
+}
+#SoViewCayDc{
+    font-size: 1.3rem;
+    color: mediumblue;
+}
+
+
+/* Base  */
+:root{
+    --white-color: #fff;
+    --black-color: black;
+    --text-color: #333;
+    --red-color:red;
+    --primary-color:#EE4d2D;
+    --border-color:#dbdbdb;
+}
+*{
+     cursor: url(../images/cursor.png), auto !important; 
+} 
+*{
+    box-sizing: inherit;
+}
+html{
+    font-size: 65.5%;
+    line-height: 1.6rem;
+    /* sans-serif : ko có gạch chân */
+    font-family: 'Roboto',sans-serif ;
+    box-sizing: border-box;
+}
+@keyframes cricle{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes leaner{
+    0%{
+        transform: translate(0,0);
+    }
+    100%{
+        transform: translate(400px,-400px);   
+    }
+  
+}
+@keyframes messy{
+    0%{
+        transform: translate(0,0);
+    }
+    25%{
+        transform: translate(-100px,-100px);   
+    }
+    50%{
+        transform: translate(-100px,100px);   
+    }
+    50%{
+        transform: translate(-100px,100px);   
+    }
+    75%{
+        transform: translate(-100px,-100px);   
+    }
+    80%{
+        transform: translate(-100px,100px);   
+    }
+    100%{
+        transform: translate(-100px,100px);   
+    }
+  
+}
