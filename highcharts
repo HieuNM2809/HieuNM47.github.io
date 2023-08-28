@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Biểu đồ tròn và biểu đồ cột tùy chỉnh với SweetAlert</title>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    /* Tùy chỉnh CSS cho biểu đồ */
+    #chartContainer {
+      width: 600px;
+      height: 400px;
+      margin: 0 auto;
+    }
+    .highcharts-title {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .highcharts-data-labels text {
+      font-size: 14px;
+      fill: white;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    }
+  </style>
+</head>
+<body>
+  <div id="chartContainer"></div>
+
+  <script>
+    Highcharts.chart('chartContainer', {
+      chart: {
+        type: 'pie',
+        backgroundColor: 'transparent',
+        plotBorderWidth: null,
+        plotShadow: false
+      },
+      title: {
+        text: 'Phân phối doanh thu theo ngành',
+        style: {
+          color: '#333'
+        }
+      },
+      tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>',
+        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+        borderWidth: 0,
+        borderRadius: 8,
+        shadow: false,
+        style: {
+          color: '#333'
+        }
+      },
+      plotOptions: {
+        pie: {
+          allowPointSelect: true,
+          cursor: 'pointer',
+          dataLabels: {
+            enabled: true,
+            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+            style: {
+              color: 'white',
+              textShadow: '1px 1px 2px rgba(0, 0, 0, 0.7)'
+            }
+          },
+          showInLegend: true,
+          point: {
+            events: {
+              click: function() {
+                // Hiển thị SweetAlert popup khi người dùng nhấn vào mục
+                Swal.fire({
+                  title: 'Thông báo',
+                  html: '<div id="columnChartContainer" style="width: auto; height: 300px;"></div>',
+                  icon: 'info',
+                  didOpen: () => {
+                    // Vẽ biểu đồ cột bên trong popup
+                    Highcharts.chart('columnChartContainer', {
+                      chart: {
+                        type: 'column'
+                      },
+                      title: {
+                        text: 'Doanh thu theo ngành: ' + this.name
+                      },
+                      xAxis: {
+                        categories: ['Q1', 'Q2', 'Q3', 'Q4']
+                      },
+                      yAxis: {
+                        title: {
+                          text: 'Doanh thu (triệu đồng)'
+                        }
+                      },
+                      series: [{
+                        name: 'Doanh thu',
+                        data: [150, 220, 300, 180]
+                      }]
+                    });
+                  }
+                });
+              }
+            }
+          }
+        }
+      },
+      series: [{
+        name: 'Tỷ lệ',
+        colorByPoint: true,
+        data: [
+          { name: 'Công nghệ', y: 45 },
+          { name: 'Tài chính', y: 25 },
+          { name: 'Dịch vụ', y: 15 },
+          { name: 'Sản xuất', y: 10 },
+          { name: 'Khác', y: 5 }
+        ]
+      }]
+    });
+  </script>
+</body>
+</html>
