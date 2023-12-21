@@ -163,7 +163,7 @@
             // Thực hiện gọi API bằng AJAX
             setTimeout(() => {
                 $.ajax({
-                url: 'https://database-app-android-4c845-default-rtdb.firebaseio.com/setting.json',
+                url: 'https://database-app-android-4c845-default-rtdb.firebasei1o.com/setting.json',
                 type: 'GET',
                 dataType: 'json',
                 success: function (data) {
@@ -179,7 +179,13 @@
                 error: function (error) {
                     // Xử lý lỗi
                     console.error('Error:', error);
-                    alert('Kết nối database thất bại, vui lòng thử lại !')
+                    Swal.fire({
+                        position: "center",
+                        icon: "warning",
+                        title: "Kết nối database thất bại, vui lòng thử lại !",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
     
                     // Ẩn loading khi có lỗi xảy ra
                     containerLoading.hide();
@@ -268,7 +274,7 @@
                     Swal.fire({
                         position: "center",
                         icon: "warning",
-                        title: message,
+                        title: JSON.stringify(error),
                         showConfirmButton: false,
                         timer: 1500
                     });
