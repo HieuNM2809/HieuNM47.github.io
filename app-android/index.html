@@ -75,7 +75,7 @@
     </div>
     <div class="container container-content" style="display: none;">
         <div class="custom-border">
-            <h1 style="font-size: 1em;">CÔNG TY THNN THIÊN PHƯỚC LỘC</h1>
+            <h1 style="font-size: 1em;">CÔNG TY TNHH THIÊN PHƯỚC LỘC</h1>
         </div>
         <p class="red-text" class="font-size: small;font-weight: bold;">THIẾT BỊ BÁO CHÁY 8 VÙNG</p>
         <div class="d-flex">
@@ -123,37 +123,39 @@
     </div>
 
     <!-- Firebase -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    
    <script>
 
-        // var firebaseConfig = {
-        //     apiKey: "AIzaSyBckkNHIvMoIgxIHt_3HOTlMcso2V2uN_Q",
-        //     authDomain: "database-app-android-4c845.firebaseapp.com",
-        //     databaseURL: "https://database-app-android-4c845-default-rtdb.firebaseio.com",
-        //     projectId: "database-app-android-4c845",
-        //     storageBucket: "database-app-android-4c845.appspot.com",
-        //     messagingSenderId: "596263588445",
-        //     appId: "596263588445"
-        // };
-        // // Khởi tạo Firebase
-        // firebase.initializeApp(firebaseConfig);
+        const firebaseConfig = {
+            apiKey: "AIzaSyBckkNHIvMoIgxIHt_3HOTlMcso2V2uN_Q",
+            authDomain: "database-app-android-4c845.firebaseapp.com",
+            databaseURL: "https://database-app-android-4c845-default-rtdb.firebaseio.com",
+            projectId: "database-app-android-4c845",
+            storageBucket: "database-app-android-4c845.appspot.com",
+            messagingSenderId: "596263588445",
+            appId: "1:596263588445:web:ef8e05eee6120f71eeb3b4"
+        };
+        // Khởi tạo Firebase
+        firebase.initializeApp(firebaseConfig);
 
-        // // Lấy reference đến Firebase Realtime Database
-        // var database = firebase.database();
+        // Lấy reference đến Firebase Realtime Database
+        var database = firebase.database();
 
-        // var temperatureKey = "temperature";
+        var temperatureKey = "setting";
+        database.ref(temperatureKey).on('value', function(snapshot) {
+            var data = snapshot.val();
 
-        // database.ref(temperatureKey).on('value', function(snapshot) {
-        //     var data = snapshot.val();
-        //     $('#temperature').html(`NHIỆT ĐỘ: ${data} độ C`);
-        // });
-
+            console.log('data', data);
+            applyButtonStates(data);
+        });
 
          $(document).ready(function () {
             // Hiển thị loading khi trang được tải
@@ -167,9 +169,7 @@
                 type: 'GET',
                 dataType: 'json',
                 success: function (data) {
-                    // Xử lý dữ liệu
-                    console.log(data);
-
+            
                     applyButtonStates(data);
     
                     // Ẩn loading khi dữ liệu đã được tải
@@ -260,7 +260,6 @@
                 contentType: 'application/json',
                 data: JSON.stringify(values),
                 success: function (response) {
-                    console.log('Data updated successfully:', response);
                     Swal.fire({
                         position: "center",
                         icon: "success",
