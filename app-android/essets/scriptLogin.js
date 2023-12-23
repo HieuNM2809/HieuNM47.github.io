@@ -51,7 +51,7 @@ $(".btn-confirm").each(function () {
         e.preventDefault();
 
         var userName = $('#username').val();
-        var password = $('#password').val;
+        var password = $('#password').val();
 
         var finp = $(this).parent("form").find("input");
 
