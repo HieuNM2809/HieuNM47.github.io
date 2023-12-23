@@ -20,6 +20,8 @@ database.ref(temperatureKey).on('value', function (snapshot) {
     console.log('data', data);
     applyButtonStates(data);
 });
+let audioAlert = {};
+let audioSOS  = {};
 
 $(document).ready(function () {
     // Hiển thị loading khi trang được tải
@@ -93,6 +95,18 @@ function applyButtonStates(data) {
                 $('#temperature').html(`NHIỆT ĐỘ: ${data.temperature} độ C`);
             }
             $('#' + key).attr('value', data[key]);
+
+            //bật tắt âm thanh
+            if (key === "sos" && data[key] == "true") {
+                playAudio(audioSOS, './mp3/sos.mp3');
+            }else if (key === "sos" && data[key] == "false") {
+                stopAudio(audioSOS);
+            }
+            if (key === "alert" && data[key] == "true") {
+                playAudio(audioAlert, './mp3/alert.mp3');
+            }else if (key === "alert" && data[key] == "false") {
+                stopAudio(audioAlert);
+            }
         }
     }
 }
@@ -145,3 +159,21 @@ function getAllValuesAndCallApi(message) {
     });
 }
 
+function playAudio(audioObject, linkMp3) {
+    if (!audioObject.audio) {
+        audioObject.audio = new Audio(linkMp3);
+        audioObject.audio.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        }, false);
+    }
+    audioObject.audio.play();
+}
+
+function stopAudio(audioObject) {
+    console.log(audioObject);
+    if (audioObject.audio && !audioObject.audio.paused) {
+        audioObject.audio.pause();
+        audioObject.audio.currentTime = 0;
+    }
+}
