@@ -61,7 +61,7 @@ $(".btn-confirm").each(function () {
             if (userName == 'admin' && password == "123456") {
                 $(this).addClass("active");
                 setTimeout(function () {
-                    window.location.href = '/';
+                    window.location.href = '/app-android/';
                 }, 2000);
             }
         }
