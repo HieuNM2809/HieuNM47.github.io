@@ -13,8 +13,8 @@ firebase.initializeApp(firebaseConfig);
 // Lấy reference đến Firebase Realtime Database
 var database = firebase.database();
 
-var temperatureKey = "setting";
-database.ref(temperatureKey).on('value', function (snapshot) {
+var keyUser = "user1";
+database.ref(keyUser).on('value', function (snapshot) {
     var data = snapshot.val();
 
     console.log('data', data);
@@ -27,37 +27,9 @@ $(document).ready(function () {
     // Hiển thị loading khi trang được tải
     var containerLoading = $('.container-loading');
     var containerContent = $('.container-content');
-
-    // Thực hiện gọi API bằng AJAX
     setTimeout(() => {
-        $.ajax({
-            url: 'https://database-app-android-4c845-default-rtdb.firebaseio.com/setting.json',
-            type: 'GET',
-            dataType: 'json',
-            success: function (data) {
-
-                applyButtonStates(data);
-
-                // Ẩn loading khi dữ liệu đã được tải
-                containerLoading.hide();
-                containerContent.show();
-            },
-            error: function (error) {
-                // Xử lý lỗi
-                console.error('Error:', error);
-                Swal.fire({
-                    position: "center",
-                    icon: "warning",
-                    title: "Kết nối database thất bại, vui lòng thử lại !",
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-
-                // Ẩn loading khi có lỗi xảy ra
-                containerLoading.hide();
-                containerContent.show();
-            }
-        });
+        containerLoading.hide();
+        containerContent.show();
     }, 1000);
 });
 function toggleButton(button) {
@@ -91,9 +63,15 @@ function applyButtonStates(data) {
             } else {
                 button.removeClass('turn-on');
             }
+
+            // hiện text 
             if (key === "temperature") {
                 $('#temperature').html(`NHIỆT ĐỘ: ${data.temperature} độ C`);
             }
+            if (key === "fullname" || key == "username") {
+                $(buttonId).html(data[key]);
+            }
+
             $('#' + key).attr('value', data[key]);
 
             //bật tắt âm thanh
@@ -116,13 +94,21 @@ function getAllValues() {
     // Duyệt qua mảng các ID và lấy giá trị từ các thẻ tương ứng
     var ids = [
         'area1', 'area2', 'area3', 'area4', 'area5',
-        'area6', 'area7', 'area8', 'sos', 'alert', 'temperature'
+        'area6', 'area7', 'area8', 'sos', 'alert', 'temperature','fullname', 'username', 'password'
     ];
 
     for (var i = 0; i < ids.length; i++) {
         var id = ids[i];
         var value = $('#' + id).attr("value");
         values[id] = value;
+
+        if(value === undefined){
+            if (id == 'temperature' || id == 'fullname' || id == 'username' || id == 'password') {
+                values[id] = 'N/A';
+            }else{
+                values[id] = 'false';
+            }
+        }
     }
 
     return values;
@@ -130,10 +116,11 @@ function getAllValues() {
 function getAllValuesAndCallApi(message) {
     // Lấy giá trị từ tất cả các thẻ button
     var values = getAllValues();
+    console.log(values);
 
     // Gọi API để cập nhật dữ liệu trên server
     $.ajax({
-        url: 'https://database-app-android-4c845-default-rtdb.firebaseio.com/setting.json',
+        url: 'https://database-app-android-4c845-default-rtdb.firebaseio.com/'+keyUser+'.json',
         type: 'PUT',
         contentType: 'application/json',
         data: JSON.stringify(values),
