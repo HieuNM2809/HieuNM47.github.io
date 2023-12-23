@@ -4,284 +4,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-
-        .container {
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .red-text {
-            color: red;
-        }
-
-        .temperature-box {
-            background-color: #d1ecf1;
-            padding: 10px;
-            margin-top: 20px;
-            width: 180px;
-        }
-
-        .action-buttons {
-            margin-top: 20px;
-        }
-
-        .custom-border {
-            border: 1px solid #dee2e6;
-            border-radius: 10px;
-            margin: 10px;
-            padding: 10px;
-        }
-        .btn-custom{
-            font-size: 1em;
-        }
-        .disabled-custom{
-            color: var(--bs-btn-disabled-color);
-            cursor: pointer;  
-            background-color: var(--bs-btn-disabled-bg);
-            border-color: var(--bs-btn-disabled-border-color);
-            opacity: var(--bs-btn-disabled-opacity);
-        }
-        .container-loading{
-            background-color: white;
-            width: 100vw;
-            height: 100vh;
-            margin: unset;
-            display: flex;
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./essets/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="icon" href="./image/icon-alert-removebg.png">
     <title>THIẾT BỊ BÁO CHÁY 8 VÙNG</title>
 </head>
 
 <body>
-    <div class="container-loading" >
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-        style="margin: auto;    margin-top: 25vh; background: rgb(255, 255, 255); display: block; shape-rendering: auto;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+    <!-- page loading -->
+    <div class="container-loading">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            style="margin: auto;    margin-top: 35vh; background: rgb(255, 255, 255); display: block; shape-rendering: auto;"
+            width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
             <circle cx="50" cy="50" r="0" fill="none" stroke="#e90c59" stroke-width="2">
-              <animate attributeName="r" repeatCount="indefinite" dur="1s" values="0;40" keyTimes="0;1" keySplines="0 0.2 0.8 1" calcMode="spline" begin="0s"></animate>
-              <animate attributeName="opacity" repeatCount="indefinite" dur="1s" values="1;0" keyTimes="0;1" keySplines="0.2 0 0.8 1" calcMode="spline" begin="0s"></animate>
-            </circle><circle cx="50" cy="50" r="0" fill="none" stroke="#46dff0" stroke-width="2">
-              <animate attributeName="r" repeatCount="indefinite" dur="1s" values="0;40" keyTimes="0;1" keySplines="0 0.2 0.8 1" calcMode="spline" begin="-0.5s"></animate>
-              <animate attributeName="opacity" repeatCount="indefinite" dur="1s" values="1;0" keyTimes="0;1" keySplines="0.2 0 0.8 1" calcMode="spline" begin="-0.5s"></animate>
+                <animate attributeName="r" repeatCount="indefinite" dur="1s" values="0;40" keyTimes="0;1"
+                    keySplines="0 0.2 0.8 1" calcMode="spline" begin="0s"></animate>
+                <animate attributeName="opacity" repeatCount="indefinite" dur="1s" values="1;0" keyTimes="0;1"
+                    keySplines="0.2 0 0.8 1" calcMode="spline" begin="0s"></animate>
+            </circle>
+            <circle cx="50" cy="50" r="0" fill="none" stroke="#46dff0" stroke-width="2">
+                <animate attributeName="r" repeatCount="indefinite" dur="1s" values="0;40" keyTimes="0;1"
+                    keySplines="0 0.2 0.8 1" calcMode="spline" begin="-0.5s"></animate>
+                <animate attributeName="opacity" repeatCount="indefinite" dur="1s" values="1;0" keyTimes="0;1"
+                    keySplines="0.2 0 0.8 1" calcMode="spline" begin="-0.5s"></animate>
             </circle>
             <!-- [ldio] generated by https://loading.io/ -->
         </svg>
     </div>
     <div class="container container-content" style="display: none;">
-        <div class="custom-border">
-            <h1 style="font-size: 1em;">CÔNG TY TNHH THIÊN PHƯỚC LỘC</h1>
-        </div>
-        <p class="red-text" class="font-size: small;font-weight: bold;">THIẾT BỊ BÁO CHÁY 8 VÙNG</p>
-        <div class="d-flex">
-            <div class="custom-border temperature-box mx-auto" id="temperature">NHIỆT ĐỘ: N/A độ C</div>
-        </div>
-       
-        <div class="row action-buttons ">
-            <div class="col-6">
-                <button type="button" class="btn btn-primary btn-lg btn-block" id="alert" text-title="Cảnh báo"  onclick="toggleButton(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg>
-                </button>
-            </div>
-            <div class="col-6">
-                <button type="button" class="btn btn-danger btn-lg btn-block" id="sos" text-title="SOS"  onclick="toggleButton(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>
-                </button>
-            </div>
-        </div>
-        <div class="row action-buttons d-flex">
-            <div class="col-md-3 col-3 mb-2">
-                <button type="button" class="btn btn-primary btn-lg btn-block btn-custom" id="area1" text-title="Vùng 1" onclick="toggleButton(this)">Vùng 1</button>
-            </div>
-            <div class="col-md-3 col-3 mb-2">
-                <button type="button" class="btn btn-primary btn-lg btn-block btn-custom" id="area2" text-title="Vùng 2" onclick="toggleButton(this)">Vùng 2</button>
-            </div>
-            <div class="col-md-3 col-3 mb-2">
-                <button type="button" class="btn btn-primary btn-lg btn-block btn-custom" id="area3" text-title="Vùng 3" onclick="toggleButton(this)">Vùng 3</button>
-            </div>
-            <div class="col-md-3 col-3 mb-2">
-                <button type="button" class="btn btn-primary btn-lg btn-block btn-custom" id="area4" text-title="Vùng 4" onclick="toggleButton(this)">Vùng 4</button>
-            </div>
-             <div class="col-md-3 col-3 mb-2">
-                <button type="button" class="btn btn-primary btn-lg btn-block btn-custom" id="area5" text-title="Vùng 5" onclick="toggleButton(this)">Vùng 5</button>
-            </div>
-            <div class="col-md-3 col-3 mb-2">
-                <button type="button" class="btn btn-primary btn-lg btn-block btn-custom" id="area6" text-title="Vùng 6" onclick="toggleButton(this)">Vùng 6</button>
-            </div>
-            <div class="col-md-3 col-3 mb-2">
-                <button type="button" class="btn btn-primary btn-lg btn-block btn-custom" id="area7" text-title="Vùng 7" onclick="toggleButton(this)">Vùng 7</button>
-            </div>
-            <div class="col-md-3 col-3 mb-2">
-                <button type="button" class="btn btn-primary btn-lg btn-block btn-custom" id="area8" text-title="Vùng 8" onclick="toggleButton(this)">Vùng 8</button>
+        <div class="row">
+            <!-- Tab  -->
+            <ul class="col-12 nav nav-tabs nav-custom"
+            
+            
+            id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                        aria-controls="home" aria-selected="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                            class="bi bi-house" viewBox="0 0 16 16">
+                            <path
+                                d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
+                        </svg>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                        aria-controls="profile" aria-selected="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                            class="bi bi-person" viewBox="0 0 16 16">
+                            <path
+                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+            <div class="col-12 tab-content" id="myTabContent">
+                <!-- page home -->
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="custom-border">
+                        <h1 class="title-company">CÔNG TY TNHH THIÊN PHƯỚC LỘC</h1>
+                    </div>
+                    <p class="title-app" style="background-color: #FBBE0E;">THIẾT BỊ BÁO CHÁY 8 VÙNG</p>
+                    <div class="d-flex mt-5">
+                        <div class="custom-border temperature-box mx-auto" id="temperature">NHIỆT ĐỘ: N/A độ C</div>
+                    </div>
+
+                    <div class="row action-buttons mt-5">
+                        <div class="col-6">
+                            <button type="button" class="btn btn-default btn-lg btn-block btn-alert" id="alert"
+                                text-title="Cảnh báo" onclick="toggleButton(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" style="color: red!important;" viewBox="0 0 19 19">
+                                    <g class="too-big-actually">
+                                        <g class="bell-whole">
+                                            <path class="bell-part bell-part--ringer"
+                                                d="M9.5,17.5a2,2,0,0,0,2-2h-4A2,2,0,0,0,9.5,17.5Z" />
+                                            <path class="bell-part bell-part--main"
+                                                d="M16.23,12.82c-.6-.65-1.73-1.62-1.73-4.82a4.93,4.93,0,0,0-4-4.85V2.5a1,1,0,0,0-2,0v.65A4.94,4.94,0,0,0,4.5,8c0,3.2-1.13,4.17-1.73,4.82a1,1,0,0,0-.27.68,1,1,0,0,0,1,1h12a1,1,0,0,0,1-1A1,1,0,0,0,16.23,12.82Z" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="col-6" style="display: flex;justify-content: end;">
+                            <button type="button" class="btn btn-default btn-lg btn-block btn-sos" id="sos"
+                                text-title="SOS" onclick="toggleButton(this)">
+                                <img src="./image/icon-alert-removebg.png" alt="">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row action-buttons d-flex">
+                        <div class="col-12 mt-4">
+                            <div class=" group-area">
+                                <div class="col-md-3 col-3 mb-2">
+                                    <button type="button" class="btn btn-default btn-lg btn-block btn-custom" id="area1"
+                                        text-title="Vùng 1" onclick="toggleButton(this)">Vùng 1</button>
+                                </div>
+                                <div class="col-md-3 col-3 mb-2">
+                                    <button type="button" class="btn btn-default btn-lg btn-block btn-custom" id="area2"
+                                        text-title="Vùng 2" onclick="toggleButton(this)">Vùng 2</button>
+                                </div>
+                                <div class="col-md-3 col-3 mb-2">
+                                    <button type="button" class="btn btn-default btn-lg btn-block btn-custom" id="area3"
+                                        text-title="Vùng 3" onclick="toggleButton(this)">Vùng 3</button>
+                                </div>
+                                <div class="col-md-3 col-3 mb-2">
+                                    <button type="button" class="btn btn-default btn-lg btn-block btn-custom" id="area4"
+                                        text-title="Vùng 4" onclick="toggleButton(this)">Vùng 4</button>
+                                </div>
+                            </div>
+                            <div class=" group-area">
+                                <div class="col-md-3 col-3 mb-2">
+                                    <button type="button" class="btn btn-default btn-lg btn-block btn-custom" id="area5"
+                                        text-title="Vùng 5" onclick="toggleButton(this)">Vùng 5</button>
+                                </div>
+                                <div class="col-md-3 col-3 mb-2">
+                                    <button type="button" class="btn btn-default btn-lg btn-block btn-custom" id="area6"
+                                        text-title="Vùng 6" onclick="toggleButton(this)">Vùng 6</button>
+                                </div>
+                                <div class="col-md-3 col-3 mb-2">
+                                    <button type="button" class="btn btn-default btn-lg btn-block btn-custom" id="area7"
+                                        text-title="Vùng 7" onclick="toggleButton(this)">Vùng 7</button>
+                                </div>
+                                <div class="col-md-3 col-3 mb-2">
+                                    <button type="button" class="btn btn-default btn-lg btn-block btn-custom" id="area8"
+                                        text-title="Vùng 8" onclick="toggleButton(this)">Vùng 8</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- page setting -->
+                <div class="tab-pane fade tab-setting" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="settings-page">
+                        <div class="settings-container">
+                            <h1 class="page-title">Tài khoản</h1>
+                            <div class="settings-section">
+                                <h2 class="settings-title">Thông tin chung</h2>
+                                <div>
+                                    <div class="non-active-form">
+                                        Họ và Tên: <p class="capitalize">Nguyễn Văn A</p><i class="fas fa-pen"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="non-active-form">
+                                       Username<p class="capitalize">admin</p><i class="fas fa-pen"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="settings-section">
+                                <h2 class="settings-title">Đổi mật khẩu</h2>
+                                <div class="form my-form">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input name="currentPassword" placeholder="Nhập mật khẩu cũ" type="password"
+                                                class="form-control"  value="">
+                                            <span class="focus-input"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input name="password" placeholder="Nhập mật khẩu mới" type="password"
+                                                class="form-control"  value="">
+                                            <span class="focus-input"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input name="password" placeholder="Xác nhập mật khẩu mới" type="password"
+                                                class="form-control"  value="">
+                                            <span class="focus-input"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-submit right">
+                                        <button class="btn button full">Thay đổi</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
 
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    
-   <script>
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyBckkNHIvMoIgxIHt_3HOTlMcso2V2uN_Q",
-            authDomain: "database-app-android-4c845.firebaseapp.com",
-            databaseURL: "https://database-app-android-4c845-default-rtdb.firebaseio.com",
-            projectId: "database-app-android-4c845",
-            storageBucket: "database-app-android-4c845.appspot.com",
-            messagingSenderId: "596263588445",
-            appId: "1:596263588445:web:ef8e05eee6120f71eeb3b4"
-        };
-        // Khởi tạo Firebase
-        firebase.initializeApp(firebaseConfig);
-
-        // Lấy reference đến Firebase Realtime Database
-        var database = firebase.database();
-
-        var temperatureKey = "setting";
-        database.ref(temperatureKey).on('value', function(snapshot) {
-            var data = snapshot.val();
-
-            console.log('data', data);
-            applyButtonStates(data);
-        });
-
-         $(document).ready(function () {
-            // Hiển thị loading khi trang được tải
-            var containerLoading        = $('.container-loading');
-            var containerContent        = $('.container-content');
-    
-            // Thực hiện gọi API bằng AJAX
-            setTimeout(() => {
-                $.ajax({
-                url: 'https://database-app-android-4c845-default-rtdb.firebaseio.com/setting.json',
-                type: 'GET',
-                dataType: 'json',
-                success: function (data) {
-            
-                    applyButtonStates(data);
-    
-                    // Ẩn loading khi dữ liệu đã được tải
-                    containerLoading.hide();
-                    containerContent.show();
-                },
-                error: function (error) {
-                    // Xử lý lỗi
-                    console.error('Error:', error);
-                    Swal.fire({
-                        position: "center",
-                        icon: "warning",
-                        title: "Kết nối database thất bại, vui lòng thử lại !",
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-    
-                    // Ẩn loading khi có lỗi xảy ra
-                    containerLoading.hide();
-                    containerContent.show();
-                }
-            });
-            }, 1000);
-        });
-        function toggleButton(button) {
-            // Kiểm tra xem button có lớp disabled không
-            var isDisabled = button.classList.contains('disabled-custom');
-            var id = $('#' + button.id);
-            var message = "Hệ thống đang bảo trì, vui lòng thử lại sau!";
-
-            // bật 
-            if (!isDisabled) {
-                button.classList.add('disabled-custom');
-                id.attr("value", true);
-                message = "Bật cảnh báo " + id.attr("text-title") + " thành công";
-            } else {
-                button.classList.remove('disabled-custom');
-                id.attr("value", false);
-                message = "Tắt cảnh báo " + id.attr("text-title") + " thành công";
-            }
-            getAllValuesAndCallApi(message);
-        }
-        function applyButtonStates(data) {
-            // Duyệt qua các key trong data và áp dụng trạng thái lên các button
-            for (var key in data) {
-                if (data.hasOwnProperty(key)) {
-                    var buttonId = '#' + key;
-                    var button = $(buttonId);
-
-                    // Kiểm tra giá trị của key và thêm/loại bỏ lớp disabled-custom
-                    if (data[key] === "true") {
-                        button.addClass('disabled-custom');
-                    } else {
-                        button.removeClass('disabled-custom');
-                    }
-                    if(key === "temperature"){
-                        $('#temperature').html(`NHIỆT ĐỘ: ${data.temperature} độ C`);
-                    }
-                    $('#' + key).attr('value', data[key]);
-                }
-            }
-        }
-        function getAllValues() {
-            var values = {};
-
-            // Duyệt qua mảng các ID và lấy giá trị từ các thẻ tương ứng
-            var ids = [
-                'area1', 'area2', 'area3', 'area4', 'area5',
-                'area6', 'area7', 'area8', 'sos', 'alert', 'temperature'
-            ];
-
-            for (var i = 0; i < ids.length; i++) {
-                var id = ids[i];
-                var value = $('#' + id).attr("value");
-                values[id] = value;
-            }
-
-            return values;
-        }
-        function getAllValuesAndCallApi(message) {
-            // Lấy giá trị từ tất cả các thẻ button
-            var values = getAllValues();
-
-            // Gọi API để cập nhật dữ liệu trên server
-            $.ajax({
-                url: 'https://database-app-android-4c845-default-rtdb.firebaseio.com/setting.json',
-                type: 'PUT',
-                contentType: 'application/json',
-                data: JSON.stringify(values),
-                success: function (response) {
-                    Swal.fire({
-                        position: "center",
-                        icon: "success",
-                        title: message,
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-                },
-                error: function (error) {
-                    console.error('Error updating data:', error);
-                    Swal.fire({
-                        position: "center",
-                        icon: "warning",
-                        title: JSON.stringify(error),
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-                }
-            });
-        }
-       
-    </script>
+    <script src="./essets/script.js"></script>
 </body>
 
 </html>
