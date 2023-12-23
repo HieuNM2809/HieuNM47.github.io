@@ -110,6 +110,7 @@ body {
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   height: 60px;
+  z-index: 999px;
 }
 
 .nav-tabs.nav-custom svg {
@@ -326,7 +327,10 @@ body::-webkit-scrollbar-thumb:hover {
   position: sticky;
   top: 0;
 }
-
+.tab-setting .settings-page {
+  background-color: #F8F9FA;
+  z-index: 1000;
+}
 .tab-setting .settings-page .settings-container {
   width: 100%;
   margin: auto;
