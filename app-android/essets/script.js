@@ -171,10 +171,10 @@ function stopAudio(audioObject) {
 // passwordNewEdit
 // passwordNewConfirmEdit
 
-var btnChangeInfo = $('#btnChangeInfo');
-var frmInfoEditUser = $('#frmInfoEditUser');
-var messNotFill = 'Vui lòng điền đẩy đủ thông tin';
-var messPassNewAndConfirmDiff = 'Xác nhập mật khẩu không giống mật khẩu mới';
+var btnChangeInfo             = $('#btnChangeInfo');
+var frmInfoEditUser           = $('#frmInfoEditUser');
+var messNotFill               = 'Vui lòng điền đầy đủ thông tin';
+var messPassNewAndConfirmDiff = 'Xác nhận mật khẩu không giống mật khẩu mới';
 var failConnectDatabase       = "Kết nối database thất bại, vui lòng thử lại !";
 var wrongPassword             = "Sai mật khẩu";
 var success                   = "Thành công";
