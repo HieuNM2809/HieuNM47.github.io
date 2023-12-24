@@ -164,31 +164,38 @@
                                 </div>
                             </div>
                             <div class="settings-section">
-                                <h2 class="settings-title">Đổi mật khẩu</h2>
-                                <div class="form my-form">
+                                <h2 class="settings-title">Thay đổi thông tin</h2>
+                                <form class="form my-form " id="frmInfoEditUser">
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <input name="currentPassword" placeholder="Nhập mật khẩu cũ" type="password"
+                                            <input name="fullnameEdit" placeholder="Họ và tên" type="text"
                                                 class="form-control"  value="">
                                             <span class="focus-input"></span>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <input name="password" placeholder="Nhập mật khẩu mới" type="password"
+                                            <input name="passwordOldEdit" placeholder="Nhập mật khẩu cũ" type="password"
                                                 class="form-control"  value="">
                                             <span class="focus-input"></span>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <input name="password" placeholder="Xác nhập mật khẩu mới" type="password"
+                                            <input name="passwordNewEdit" placeholder="Nhập mật khẩu mới" type="password"
+                                                class="form-control"  value="">
+                                            <span class="focus-input"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input name="passwordNewConfirmEdit" placeholder="Xác nhập mật khẩu mới" type="password"
                                                 class="form-control"  value="">
                                             <span class="focus-input"></span>
                                         </div>
                                     </div>
                                     <div class="form-submit right">
-                                        <button class="btn button full">Thay đổi</button>
+                                        <button class="btn button full" id="btnChangeInfo">Thay đổi</button>
                                     </div>
                                 </form>
                             </div>

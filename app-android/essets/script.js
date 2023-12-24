@@ -77,12 +77,12 @@ function applyButtonStates(data) {
             //bật tắt âm thanh
             if (key === "sos" && data[key] == "true") {
                 playAudio(audioSOS, './mp3/sos.mp3');
-            }else if (key === "sos" && data[key] == "false") {
+            } else if (key === "sos" && data[key] == "false") {
                 stopAudio(audioSOS);
             }
             if (key === "alert" && data[key] == "true") {
                 playAudio(audioAlert, './mp3/alert.mp3');
-            }else if (key === "alert" && data[key] == "false") {
+            } else if (key === "alert" && data[key] == "false") {
                 stopAudio(audioAlert);
             }
         }
@@ -94,7 +94,7 @@ function getAllValues() {
     // Duyệt qua mảng các ID và lấy giá trị từ các thẻ tương ứng
     var ids = [
         'area1', 'area2', 'area3', 'area4', 'area5',
-        'area6', 'area7', 'area8', 'sos', 'alert', 'temperature','fullname', 'username', 'password'
+        'area6', 'area7', 'area8', 'sos', 'alert', 'temperature', 'fullname', 'username', 'password'
     ];
 
     for (var i = 0; i < ids.length; i++) {
@@ -102,10 +102,10 @@ function getAllValues() {
         var value = $('#' + id).attr("value");
         values[id] = value;
 
-        if(value === undefined){
+        if (value === undefined) {
             if (id == 'temperature' || id == 'fullname' || id == 'username' || id == 'password') {
                 values[id] = 'N/A';
-            }else{
+            } else {
                 values[id] = 'false';
             }
         }
@@ -116,11 +116,10 @@ function getAllValues() {
 function getAllValuesAndCallApi(message) {
     // Lấy giá trị từ tất cả các thẻ button
     var values = getAllValues();
-    console.log(values);
 
     // Gọi API để cập nhật dữ liệu trên server
     $.ajax({
-        url: 'https://database-app-android-4c845-default-rtdb.firebaseio.com/'+keyUser+'.json',
+        url: 'https://database-app-android-4c845-default-rtdb.firebaseio.com/' + keyUser + '.json',
         type: 'PUT',
         contentType: 'application/json',
         data: JSON.stringify(values),
@@ -149,7 +148,7 @@ function getAllValuesAndCallApi(message) {
 function playAudio(audioObject, linkMp3) {
     if (!audioObject.audio) {
         audioObject.audio = new Audio(linkMp3);
-        audioObject.audio.addEventListener('ended', function() {
+        audioObject.audio.addEventListener('ended', function () {
             this.currentTime = 0;
             this.play();
         }, false);
@@ -158,9 +157,125 @@ function playAudio(audioObject, linkMp3) {
 }
 
 function stopAudio(audioObject) {
-    console.log(audioObject);
     if (audioObject.audio && !audioObject.audio.paused) {
         audioObject.audio.pause();
         audioObject.audio.currentTime = 0;
     }
+}
+
+
+// change info
+
+// fullnameEdit
+// passwordOldEdit
+// passwordNewEdit
+// passwordNewConfirmEdit
+
+var btnChangeInfo = $('#btnChangeInfo');
+var frmInfoEditUser = $('#frmInfoEditUser');
+var messNotFill = 'Vui lòng điền đẩy đủ thông tin';
+var messPassNewAndConfirmDiff = 'Xác nhập mật khẩu không giống mật khẩu mới';
+var failConnectDatabase       = "Kết nối database thất bại, vui lòng thử lại !";
+var wrongPassword             = "Sai mật khẩu";
+var success                   = "Thành công";
+var allDataFrm = {};
+
+btnChangeInfo.click(async function (e) {
+    e.preventDefault();
+    allDataFrm = frmInfoEditUser.serializeArray();
+
+    var formDataJson = {};
+    $.each(allDataFrm, function(index, field) {
+        formDataJson[field.name] = field.value;
+    });
+
+    // validate from
+    if (validateForm(formDataJson)) return;
+
+    // check pass 
+    if (await validatePassOld(formDataJson)) return;
+    
+    getAllValuesAndCallApiUpdateInfo(success, formDataJson);
+});
+
+function validateForm(formDataJson) {
+    var isMessageError = null;
+    $.each(formDataJson, function (index, value) {
+        if (!value) {
+            isMessageError = messNotFill;
+            return false;
+        }
+    });
+    if (isMessageError) {
+        notiMessage(isMessageError);
+    }
+    // [2] mk mới, [3] xác nhận mk mới 
+    if (formDataJson.passwordNewEdit != formDataJson.passwordNewConfirmEdit) {
+        isMessageError = messPassNewAndConfirmDiff;
+        notiMessage(isMessageError);
+    }
+    return isMessageError ? true : false;
+}
+async function validatePassOld(formDataJson) {
+    try {
+        var isMessageError = null;
+        var passOld = formDataJson.passwordOldEdit;
+
+        // Wrap the jQuery AJAX call in a Promise
+        const data = await new Promise((resolve, reject) => {
+            $.ajax({
+                url: 'https://database-app-android-4c845-default-rtdb.firebaseio.com/' + keyUser + '.json',
+                type: 'GET',
+                dataType: 'json',
+                success: function (responseData) {
+                    resolve(responseData);
+                },
+                error: function (error) {
+                    reject(error);
+                }
+            });
+        });
+
+        // Check password and set error message
+        if (data.password !== passOld) {
+            isMessageError = wrongPassword;
+            notiMessage(isMessageError);
+        }
+
+        return isMessageError ? true : false;
+    } catch (error) {
+        notiMessage(failConnectDatabase);
+        return true;
+    }
+}
+function getAllValuesAndCallApiUpdateInfo(message, formDataJson) {
+    // Lấy giá trị từ tất cả các thẻ button
+    var values = getAllValues();
+    values.fullname = formDataJson.fullnameEdit;
+    values.password = formDataJson.passwordNewEdit;
+    // Gọi API để cập nhật dữ liệu trên server
+    $.ajax({
+        url: 'https://database-app-android-4c845-default-rtdb.firebaseio.com/' + keyUser + '.json',
+        type: 'PUT',
+        contentType: 'application/json',
+        data: JSON.stringify(values),
+        success: function (response) {
+            notiMessage(message, icon = "success")
+            frmInfoEditUser.find('input, textarea, select').val('');
+        },
+        error: function (error) {
+            console.error('Error updating data:', error);
+            notiMessage(JSON.stringify(error));
+        }
+    });
+}
+
+function notiMessage(isMessageError, icon = "warning") {
+    Swal.fire({
+        position: "top",
+        icon: icon,
+        title: isMessageError,
+        showConfirmButton: false,
+        timer: 1500
+    });
 }
