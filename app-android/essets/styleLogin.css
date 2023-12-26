@@ -184,17 +184,16 @@ h6 {
 }
 
 .formBox .regTag {
-    line-height: 140px;
+    line-height: 141px;
     box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.45);
     border-radius: 50%;
     background-color: #e59500;
     color: #fff;
-    font-size: 58px;
     text-align: center;
-    width: 140px;
-    height: 140px;
+    width: 100px!important;
+    height: 100px!important;
     position: absolute;
-    right: -70px;
+    right: 0px;
     top: 40px;
     z-index: 2;
 }
@@ -202,7 +201,7 @@ h6 {
 .formBox .regTag svg {
     fill: #fff;
     width: 38px;
-    height: 38px;
+    height: 48px;
 }
 
 .formBox .registerBox {
@@ -215,6 +214,7 @@ h6 {
     visibility: hidden;
     backface-visibility: visible;
     z-index: 1;
+    margin: auto;
 }
 
 .formBox .registerBox .f_row label,
@@ -350,11 +350,21 @@ h6 {
     transform: translate(0px, 20px);
     transition-delay: 0.25s;
 }
+.container-content {
+    display: flex;
+}
+.formBox{
+    margin: auto;
+}
 
 .formBox.level-login .boxShaddow {
     opacity: 0.7;
     transform-origin: center top;
     transform: translate(0px, -9px) scale(0.97);
+}
+
+.formBox.level-reg .regTag.icon-add {
+    right: -60px!important;
 }
 
 .formBox.level-reg h2 {

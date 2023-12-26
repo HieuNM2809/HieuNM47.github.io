@@ -1,3 +1,10 @@
+const routeLogin = "/app-android/login.html";
+if (!localStorage.getItem("isLogin")) {
+    window.location.href = routeLogin;
+}
+
+var keyUser = localStorage.getItem("isLogin");
+
 const firebaseConfig = {
     apiKey: "AIzaSyBckkNHIvMoIgxIHt_3HOTlMcso2V2uN_Q",
     authDomain: "database-app-android-4c845.firebaseapp.com",
@@ -13,7 +20,7 @@ firebase.initializeApp(firebaseConfig);
 // Lấy reference đến Firebase Realtime Database
 var database = firebase.database();
 
-var keyUser = "user1";
+
 database.ref(keyUser).on('value', function (snapshot) {
     var data = snapshot.val();
 
@@ -279,3 +286,15 @@ function notiMessage(isMessageError, icon = "warning") {
         timer: 1500
     });
 }
+
+
+
+$("#btnLogout").on("click", function() {
+    // Check if isLogin exists in localStorage
+    if (localStorage.getItem("isLogin")) {
+        localStorage.removeItem("isLogin");
+        window.location.href = routeLogin;
+    } else {
+        notiMessage('User chưa login !', icon = "warning") 
+    }
+});

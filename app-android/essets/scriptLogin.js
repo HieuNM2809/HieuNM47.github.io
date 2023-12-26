@@ -1,3 +1,6 @@
+var USER_NOT_EXSIT = "User không tồn tại";
+var PASS_NOT_FALSE = "Mật khẩu không đúng";
+var routeHone      = "/app-android/";
 
 var inP = $(".input-field");
 $(document).ready(function () {
@@ -47,21 +50,20 @@ $(".regTag").click(function (e) {
 $(".btn-confirm").each(function () {
   
    
-    $(this).on("click", function (e) {
+    $(this).on("click", async function (e) {
         e.preventDefault();
 
-        var userName = $('#username').val();
-        var password = $('#password').val();
+        var userName = $('#username').val().trim();
+        var password = $('#password').val().trim();
 
         var finp = $(this).parent("form").find("input");
 
-
         if (!finp.val() == 0) {
-            console.log(userName, password);
-            if (userName == 'admin' && password == "123456") {
-                $(this).addClass("active");
-                window.location.href = '/app-android/';
-            }
+
+            if (await validatePass(userName, password)) return;
+            $(this).addClass("active");
+            window.location.href = routeHone;
+            localStorage.setItem("isLogin", userName);
         }
 
         inP.val("");
@@ -72,14 +74,53 @@ $(".btn-confirm").each(function () {
         if (inP.val() == 0) {
             inP.parent(".f_row").addClass("shake");
         }
-
-        
-
         //inP.val('');
         //$('.f_row').removeClass('focus');
-    });
-
-    
-    
+    });    
 });
+
+async function validatePass(userName, password) {
+    try {
+        var isMessageError = null;
+
+        // Wrap the jQuery AJAX call in a Promise
+        const data = await new Promise((resolve, reject) => {
+            $.ajax({
+                url: 'https://database-app-android-4c845-default-rtdb.firebaseio.com/' + userName + '.json',
+                type: 'GET',
+                dataType: 'json',
+                success: function (responseData) {
+                    resolve(responseData);
+                },
+                error: function (error) {
+                    reject(error);
+                }
+            });
+        });
+        if(data == null){
+            isMessageError = USER_NOT_EXSIT;
+            notiMessage(isMessageError);
+
+        }else if (data.password !== password) {
+            isMessageError = PASS_NOT_FALSE;
+            notiMessage(isMessageError);
+        }
+
+        return isMessageError ? true : false;
+    } catch (error) {
+        notiMessage(failConnectDatabase);
+        return true;
+    }
+}
+
+function notiMessage(isMessageError, icon = "warning") {
+    Swal.fire({
+        position: "top",
+        icon: icon,
+        title: isMessageError,
+        showConfirmButton: false,
+        timer: 1500
+    });
+}
+
 

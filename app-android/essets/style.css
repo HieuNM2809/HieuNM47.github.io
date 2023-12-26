@@ -538,3 +538,10 @@ body::-webkit-scrollbar-thumb:hover {
 .tab-setting .my-form .form-submit .btn:not(:disabled):not(.disabled) {
   background-color: #e59500;
 }
+
+
+.settings-section .form-submit.right #btnLogout{
+  color: #fff;
+  background-color: #dc3545!important;
+  border-color: #dc3545;
+}
